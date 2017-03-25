@@ -1,0 +1,2 @@
+include ':weiboSDK', ':swipebacklayout', ':datetimepicker'
+include ':app'

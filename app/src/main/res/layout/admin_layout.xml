@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/windowBackground"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+    <include layout="@layout/toolbar_setting_admin"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="15dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/admin_ts"/>
+        <EditText
+            android:id="@+id/admin_screen_name"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="@string/admin_screen_name"
+            android:textColorHint="@color/gray"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:layout_marginTop="20dp"
+            android:padding="10dp"
+            android:background="@color/white"/>
+        <TextView
+            android:id="@+id/admin_error_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textSize="12sp"
+            android:textColor="@color/red"/>
+        <Button
+            android:id="@+id/admin_jihuo_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textSize="18sp"
+            android:text="@string/admin_jihuo"
+            android:background="@drawable/comment_item_bg"
+            android:textColor="@color/orange"/>
+    </LinearLayout>
+
+</LinearLayout>

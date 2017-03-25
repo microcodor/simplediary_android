@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/contentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/home_weiboitem_bottombar_height">
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16.0dip"
+            android:src="@mipmap/ic_write_white_24db"
+            app:backgroundTint="#FFC107"
+            app:borderWidth="0.0dip"
+            app:elevation="5.0dip"
+            app:fabSize="normal"
+            android:layout_gravity="right|bottom"
+            app:pressedTranslationZ="10.0dip"
+            app:rippleColor="#FFC107"
+            android:alpha="0.8"/>
+
+        </FrameLayout>
+
+
+
+
+    <include layout="@layout/bottom_toolbar_10" />
+
+
+
+</FrameLayout>

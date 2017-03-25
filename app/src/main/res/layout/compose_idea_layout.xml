@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/idea_title"
+        layout="@layout/toolbar_post_writeweibo" />
+
+
+    <ScrollView
+        android:id="@+id/idea_scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/idea_title"
+        android:background="@color/post_bg">
+
+        <LinearLayout
+            android:id="@+id/idea_linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/idea_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="7dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="12.5dp"
+                android:background="@color/post_bg"
+                android:gravity="top"
+                android:hint="分享新鲜事..."
+                android:inputType="textMultiLine"
+                android:minHeight="100dp"
+                android:textColor="@color/post_text"
+                android:textColorHint="@color/post_hint"
+                android:textSize="@dimen/post_content_font" />
+
+            <include layout="@layout/compose_repost_layout" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/ImgList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:padding="15dp" />
+        </LinearLayout>
+    </ScrollView>
+
+    <ImageView
+        android:id="@+id/blankspace"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_below="@id/idea_scrollview"
+        android:background="@color/post_bg" />
+
+    <LinearLayout
+        android:id="@+id/bottom_cz_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/post_bg"
+            android:gravity="center_horizontal"
+            android:paddingBottom="9dp"
+            android:paddingTop="9dp">
+
+            <TextView
+                android:id="@+id/location_btn"
+                android:layout_width="90dp"
+                android:layout_height="27dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="10dp"
+                android:drawableLeft="@drawable/compose_locatebutton_ready_auto"
+                android:gravity="center"
+                android:text="显示位置"
+                android:textColor="@color/home_bottombar_font"
+                android:visibility="visible" />
+
+            <LinearLayout
+                android:id="@+id/timer_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:src="@mipmap/ic_timer_black_18dp" />
+
+                <TextView
+                    android:id="@+id/date_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="27dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center"
+                    android:text="2017年1月5日"
+                    android:textColor="@color/home_bottombar_font" />
+
+                <TextView
+                    android:id="@+id/time_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="27dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center"
+                    android:text="14:24"
+                    android:textColor="@color/home_bottombar_font" />
+
+                <TextView
+                    android:id="@+id/timer_jiange"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/message_item_auto"
+                    android:gravity="center"
+                    android:text="间隔：15分"
+                    android:textColor="@color/home_bottombar_font" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/right_cz_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp">
+
+                <TextView
+                    android:id="@+id/publicbutton"
+                    android:layout_width="60dp"
+                    android:layout_height="27dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:drawableLeft="@drawable/compose_publicbutton"
+                    android:gravity="center"
+                    android:text="公开"
+                    android:textColor="@color/idea_bottom_text_color"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/timertype_spinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="3dp"
+                    android:paddingBottom="3dp"
+                    android:layout_centerVertical="true"
+                    android:text="@string/idea_current_text"
+                    android:textColor="@color/white"
+                    android:background="@drawable/selector_button_bg"
+                    android:gravity="center" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/limitTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="27dp"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@id/right_cz_layout"
+                android:layout_marginRight="10dp"
+                android:gravity="center"
+                android:text=""
+                android:textColor="#e03f22" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="@color/post_bottomBar_bg"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/picture"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/compose_toolbar_picture_auto" />
+
+            <ImageView
+                android:id="@+id/mentionbutton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/compose_mentionbutton_background_auto" />
+
+            <ImageView
+                android:id="@+id/trendbutton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/compose_trendbutton_background_auto" />
+
+            <ImageView
+                android:id="@+id/emoticonbutton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/compose_emoticonbutton_background_auto" />
+
+            <ImageView
+                android:id="@+id/more_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/compose_toolbar_more_auto" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
